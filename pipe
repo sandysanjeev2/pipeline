@@ -25,27 +25,17 @@ pipeline {
 					sh '''
 						#!/bin/bash
 						cd /var/lib/jenkins/workspace
-					'''
-                                        }
-                                        }
-                        stage('verify repo directory') {
-                                steps {
-					sh '''
 						if [ -d test1 ];then
-							cd test1
-							git pull  https://github.com/sandysanjeev2/test1.git
-						else
-							git clone https://github.com/sandysanjeev2/test1.git
-							cd test1
-						fi
+                                                        cd test1
+                                                        git pull  https://github.com/sandysanjeev2/test1.git
+                                                else
+                                                        git clone https://github.com/sandysanjeev2/test1.git
+                                                        cd test1
+                                                fi
+						make
 					'''
+                                       		 }
                                         }
-                                        }
-                        stage('generate artifact') {
-                                steps {
-					sh "make"
-                                        }
-                                }
 
 			}
 	}
