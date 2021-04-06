@@ -1,0 +1,18 @@
+pipeline {
+	agent any
+
+		stages {
+			stage('test') {
+				steps {
+					echo "This is stage 1"
+					sh 'sleep 5'
+					}
+					}
+			stage('test2') {
+				steps {
+					echo "this is test2"
+					sh 'sleep 5'
+					}
+					}
+			}
+	}
